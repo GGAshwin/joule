@@ -1,0 +1,5 @@
+schema_version: 1.0.0
+name: concur_report
+capabilities:
+  - type: local
+    folder: ./concur_reports

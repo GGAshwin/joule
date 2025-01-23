@@ -1,0 +1,17 @@
+action_groups:
+  - actions:
+      - type: message
+        message:
+          type: text
+          content: "Finding the most recent report name..."
+      - type: api-request
+        method: GET
+        system_alias: CONCUR
+        path: api/v3.0/expense/reports?approvalStatusCode=A_NOTF
+        headers:
+          Accept: application/json
+        result_variable: reports
+      - type: message
+        message:
+          type: text
+          content: "<? reports.body.Items[0].Name?>"

@@ -1,0 +1,15 @@
+parameters:
+  - name: reportId
+action_groups:
+  - actions:
+      - type: api-request
+        method: GET
+        system_alias: CONCUR
+        path: /api/v3.0/expense/entries?reprotId=<?reportId?>
+        headers:
+          Accept: application/json
+        result_variable: reports
+      - type: message
+        message:
+          type: text
+          content: "<? reports.body.Items[0].TransactionAmount?>"
