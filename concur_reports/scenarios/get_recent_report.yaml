@@ -3,3 +3,7 @@ description: This scenario finds the name of your most recent report
 target:
   type: function
   name: getRecentReport
+
+capability_context:
+  - name: reportId
+    value: $target_result.reportId

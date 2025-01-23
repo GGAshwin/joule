@@ -15,3 +15,5 @@ action_groups:
         message:
           type: text
           content: "<? reports.body.Items[0].Name?>"
+result:
+  reportId: "<? reports.body.Items[0].ReportID?>"
