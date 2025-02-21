@@ -1,8 +1,5 @@
-description: This scenario finds the expense entries in a report
+description: This scenario gets the title of the first product from the DummyProductsJson system
 
 target:
   type: function
   name: getExpenseEntries
-  parameters:
-    - name: reportId
-      value: $capability_context.reportId

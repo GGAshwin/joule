@@ -2,11 +2,11 @@ schema_version: 3.7.0
 
 metadata:
   namespace: namespace
-  name: concur_reports
-  version: 1.1.0
-  display_name: concur_reports
-  description: This capability handles concur reports
+  name: dummy_reports
+  version: 1.1.1
+  display_name: dummy_reports
+  description: This capability handles dummy products
 
 system_aliases:
-  CONCUR:
-    destination: CONCUR_DEMO
+  DUMMY:
+    destination: DummyProductsJson

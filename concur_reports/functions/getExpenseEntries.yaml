@@ -1,16 +1,13 @@
-parameters:
-  - name: reportId
-    optional: true
 action_groups:
   - actions:
       - type: api-request
         method: GET
-        system_alias: CONCUR
-        path: /api/v3.0/expense/entries?reprotId=<?reportId?>
+        system_alias: DUMMY
+        path: /
         headers:
           Accept: application/json
-        result_variable: reports
+        result_variable: products
       - type: message
         message:
           type: text
-          content: "<? reports.body.Items[0].TransactionAmount?>"
+          content: "<? products.body.products[0].title?>"
