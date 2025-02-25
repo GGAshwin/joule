@@ -5,12 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <script
+  <!-- <script
     src="https://lobby-joule-dev.eu12.sapdas.cloud.sap/resources/public/webclient/bootstrap.js"
     data-bot-name="lobby_joule"
     data-expander-type="DEFAULT"
     data-expander-preferences="JTdCJTIyb25ib2FyZGluZ01lc3NhZ2UlMjIlM0ElMjJDb21lJTIwc3BlYWslMjB0byUyMG1lJTIxJTIyJTJDJTIyZXhwYW5kZXJUaXRsZSUyMiUzQSUyMiUyMiUyQyUyMmV4cGFuZGVyTG9nbyUyMiUzQSUyMkNVWF9BdmF0YXIuc3ZnJTIyJTJDJTIydGhlbWUlMjIlM0ElMjJzYXBfaG9yaXpvbiUyMiU3RA=="
-  ></script>
+  ></script> -->
 
   <body></body>
+
+  <script defer>
+    // Example of a Web Client Bridge setup
+
+    window.sapdas = window.sapdas || {};
+    window.sapdas.webclientBridge = window.sapdas.webclientBridge || {};
+
+    window.sapdas.webclientBridge = {
+      getBotPreferences: () => {
+        return {
+          headerTitle: "SAP Digital Assistant",
+          userInputPlaceholder: "How can I help you?",
+        };
+      },
+    };
+
+    // DAS Tenant properties
+    das_props = {
+      url: "https://lobby-joule-dev.eu12.sapdas.cloud.sap/resources/public/webclient/bootstrap.js",
+      botname: "lobby_joule",
+    };
+
+    // Create and add the script
+    var wc_script = document.createElement("script");
+
+    wc_script.setAttribute("src", das_props.url);
+    wc_script.setAttribute("data-bot-name", das_props.botname);
+    wc_script.setAttribute("data-expander-type", "DEFAULT");
+    wc_script.setAttribute(
+      "data-expander-preferences",
+      "JTdCJTIyYWNjZW50Q29sb3IlMjIlM0ElMjIlMjNFMDVBNDclMjIlMkMlMjJiYWNrZ3JvdW5kQ29sb3IlMjIlM0ElMjIlMjNGRkZGRkYlMjIlMkMlMjJjb21wbGVtZW50YXJ5Q29sb3IlMjIlM0ElMjIlMjNGRkZGRkYlMjIlMkMlMjJvbmJvYXJkaW5nTWVzc2FnZSUyMiUzQSUyMkNvbWUlMjBzcGVhayUyMHRvJTIwbWUhJTIyJTJDJTIyZXhwYW5kZXJUaXRsZSUyMiUzQSUyMiUyMiUyQyUyMmV4cGFuZGVyTG9nbyUyMiUzQSUyMkNVWF9BdmF0YXIuc3ZnJTIyJTJDJTIydGhlbWUlMjIlM0ElMjJzYXBfaG9yaXpvbiUyMiU3RA=="
+    );
+
+    wc_script.onload = () => {
+      // Use the Web Client API to do some initialization if needed such as setting a different theme and showing the Web Client
+      sap.das.webclient.setTheme("sap_horizon");
+      sap.das.webclient.show();
+    };
+
+    document.head.appendChild(wc_script);
+  </script>
 </html>
