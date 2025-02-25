@@ -1,0 +1,5 @@
+description: This scenario gets the title of the first project from the REGISTRY system
+
+target:
+  type: function
+  name: getFirstProject

@@ -1,0 +1,5 @@
+description: This scenario creates a new business process project
+
+target:
+  type: function
+  name: createBSProject

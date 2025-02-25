@@ -1,0 +1,14 @@
+action_groups:
+  - actions:
+      - type: api-request
+        method: GET
+        system_alias: TEST
+        path: /v1/build/private/lobby/projects
+        headers:
+          Accept: application/json
+          Authorization: Bearer <TOKEN>
+        result_variable: projects
+      - type: message
+        message:
+          type: text
+          content: "<? projects.body.content[0].name?>"

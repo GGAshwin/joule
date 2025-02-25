@@ -1,0 +1,18 @@
+action_groups:
+  - actions:
+      - type: api-request
+        method: POST
+        system_alias: TEST
+        path: /v1/applicationdevelopment/lobby/projects
+        headers:
+          Accept: application/json
+          Authorization: Bearer <TOKEN>
+        body:
+          name: "createTestJoule1"
+          type: "com.sap.project.spa"
+          description: "this was made using joule!!"
+        result_variable: projects
+      - type: message
+        message:
+          type: text
+          content: "<? projects.body.name?>"

@@ -3,7 +3,7 @@ action_groups:
       - type: api-request
         method: GET
         system_alias: DUMMY
-        path: /products
+        path: /
         headers:
           Accept: application/json
         result_variable: allProducts
@@ -11,12 +11,4 @@ action_groups:
         message:
           type: text
           content: |
-            <? 
-              cheapestProduct = null;
-              for product in allProducts.body.products
-                if cheapestProduct == null || product.price < cheapestProduct.price
-                  cheapestProduct = product;
-                endif
-              endfor
-            ?>
-            The cheapest product is '<? cheapestProduct.title ?>' at $<? cheapestProduct.price ?>.
+            The cheapest product is '<? allProducts.body.products.^[price!=null].^[orderBy(price)][0].title ?>' at $<? allProducts.body.products.^[price!=null].^[orderBy(price)][0].price ?>.

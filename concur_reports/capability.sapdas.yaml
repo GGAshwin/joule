@@ -10,3 +10,7 @@ metadata:
 system_aliases:
   DUMMY:
     destination: DummyProductsJson
+  REGISTRY:
+    destination: REGISTRY
+  TEST:
+    destination: TEST
