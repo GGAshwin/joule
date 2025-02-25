@@ -1,9 +1,0 @@
-description: This scenario searches for products by a keyword and returns the titles of the first 3 matching products.
-
-slots:
-  - name: keyword
-    description: products fetched for this keyword
-
-target:
-  type: function
-  name: searchProducts

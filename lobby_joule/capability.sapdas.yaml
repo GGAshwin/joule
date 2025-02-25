@@ -1,0 +1,12 @@
+schema_version: 3.7.0
+
+metadata:
+  namespace: namespace
+  name: lobby_joule
+  version: 1.1.1
+  display_name: lobby_joule
+  description: This capability handles interaction with joule
+
+system_aliases:
+  REGISTRY:
+    destination: REGISTRY

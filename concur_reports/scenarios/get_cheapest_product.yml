@@ -1,5 +1,0 @@
-description: This scenario retrieves the cheapest product and returns its title and price.
-
-target:
-  type: function
-  name: getCheapestProduct

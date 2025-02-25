@@ -1,5 +1,5 @@
 schema_version: 1.0.0
-name: products_bot
+name: lobby_joule
 capabilities:
   - type: local
-    folder: ./concur_reports
+    folder: ./lobby_joule

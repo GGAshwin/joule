@@ -1,5 +1,0 @@
-description: This scenario gets the title of the first product from the DummyProductsJson system
-
-target:
-  type: function
-  name: getExpenseEntries

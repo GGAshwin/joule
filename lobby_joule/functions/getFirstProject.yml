@@ -2,7 +2,7 @@ action_groups:
   - actions:
       - type: api-request
         method: GET
-        system_alias: TEST
+        system_alias: REGISTRY
         path: /v1/build/private/lobby/projects
         headers:
           Accept: application/json
