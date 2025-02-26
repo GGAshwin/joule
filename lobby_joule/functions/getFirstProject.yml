@@ -6,9 +6,25 @@ action_groups:
         path: /v1/build/private/lobby/projects
         headers:
           Accept: application/json
-          Authorization: Bearer <TOKEN>
+          Authorization: "Bearer <TOKEN>"
         result_variable: projects
+
+  - condition: projects == null || projects.status_code != 200
+    actions:
       - type: message
         message:
           type: text
-          content: "<? projects.body.content[0].name?>"
+          content: "❌ Error: Unable to fetch projects. Please try again later."
+
+  - condition: projects.body == null || projects.body.content == null || projects.body.content.size() == 0
+    actions:
+      - type: message
+        message:
+          type: text
+          content: "ℹ️ No projects found."
+
+  - actions:
+      - type: message
+        message:
+          type: text
+          content: "✅ First project: <? projects.body.content[0].name ?>"

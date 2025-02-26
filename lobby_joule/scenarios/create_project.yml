@@ -1,5 +1,11 @@
 description: This scenario creates a new business process project
 
+slots:
+  - name: projectName
+    description: "What is the name of the project?"
+  - name: projectDescription
+    description: "What is the description of the project?"
+
 target:
   type: function
   name: createBSProject
