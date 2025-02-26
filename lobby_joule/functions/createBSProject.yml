@@ -1,6 +1,7 @@
 parameters:
   - name: projectName
   - name: projectDescription
+    optional: true
 
 action_groups:
   - actions:
@@ -19,4 +20,4 @@ action_groups:
       - type: message
         message:
           type: text
-          content: "<? projects.body.name?>"
+          content: "<? projects.body.name?> was created ✅"
