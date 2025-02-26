@@ -1,3 +1,7 @@
+parameters:
+  - name: projectName
+  - name: projectDescription
+
 action_groups:
   - actions:
       - type: api-request
@@ -6,11 +10,11 @@ action_groups:
         path: /v1/applicationdevelopment/lobby/projects
         headers:
           Accept: application/json
-          Authorization: Bearer <TOKEN>
+          Authorization: "Bearer <TOEKN>"
         body:
-          name: "createTestJoule1"
+          name: <? projectName ?>
           type: "com.sap.project.spa"
-          description: "this was made using joule!!"
+          description: <? projectDescription ?>
         result_variable: projects
       - type: message
         message:
