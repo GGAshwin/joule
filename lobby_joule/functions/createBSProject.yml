@@ -16,6 +16,22 @@ action_groups:
           type: "com.sap.project.spa"
           description: <? projectDescription ?>
         result_variable: projects
+
+  - condition: projects.status_code != 201
+    actions:
+      - type: message
+        message:
+          type: text
+          content: "❌ Error: Something went wrong. Please try again later."
+
+  - condition: projects.status_code == 409
+    actions:
+      - type: message
+        message:
+          type: text
+          content: "❌ Error: Project with name '<? projectName ?>' already exists."
+
+  - actions:
       - type: message
         message:
           type: text
